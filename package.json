@@ -1,0 +1,26 @@
+{
+  "name": "ieeetems_backend_api",
+  "version": "1.0.0",
+  "description": "restfull api for ieeetems chapter",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "nodemon":"nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/temswebsite/Backend.git"
+  },
+  "author": "web_dev_team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/temswebsite/Backend/issues"
+  },
+  "homepage": "https://github.com/temswebsite/Backend#readme",
+  "dependencies": {
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
