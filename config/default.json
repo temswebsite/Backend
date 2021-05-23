@@ -2,6 +2,6 @@
     "env": "development",
     "name": "ieee_tems_backend",
     "server_port": 3100,
-    "base_url": "http://localhost:3000/",
+    "base_url": "http://localhost:3100/",
     "ENCRYPTION_KEY":"5e8ff9bf55ba3508149d22e984129be6"
 }

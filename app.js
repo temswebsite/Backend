@@ -6,12 +6,16 @@ var app_routes=require("./app/routes/app_routes")
 var config = require("config");
 var app = express();
 var logger = require("morgan");
+const cookieParser = require("cookie-parser");
 // var mongoose = require("mongoose");
 
 // initiating the cors option
-app.use(cors());
-app.options("*",cors());
+app.use(cors({credentials: true, origin: "http://localhost:8100" }));
 
+// initiating the cookie parser
+app.use(cookieParser())
+
+app.use(express.json());
 // setting the urlencoded for getting the data from post in objext format.
 app.use(express.urlencoded({ extended: true }));
 
