@@ -1,4 +1,5 @@
 const Events = require('../models/Events');
+//create Event
 module.exports.create = (req, res) => {
     const params={
         Event_name:req.body.Event_name,
@@ -12,9 +13,10 @@ module.exports.create = (req, res) => {
         res.status(200).send('ok').json({msg:`${req.body.Event_name}. event has been successfully added`})
     })
     .catch(err=>{
-        res.status(500).send('Not ok').json({msg:"somting went worng, please try again later"})
+        res.status(500).send('Not ok').json({msg:"something went worng, please try again later"})
     })
 }
+//Display Event
 module.exports.read = (req, res) => {
     const Event_name = req.body.Event_name;
         User.findOne({"Event_name":Event_name})
@@ -25,5 +27,19 @@ module.exports.read = (req, res) => {
             res.status(500).json({msg:"somting went worng, please try again later"})
         })
 }
-module.exports.update = (req, res) => {}
-module.exports.delete = (req, res) => {}
+//update Event
+module.exports.update = (req, res) => {
+
+}
+//Delete Event
+module.exports.delete = (req, res) => {
+  const Event_name = req.params.Event_name;
+  Events.findByIdAndDelete(Event_name)
+    .then(result => {
+      res.status(200).send('ok').json({msg:`${req.body.Event_name}. event has been successfully Deleted`})
+      res.json({ redirect: '/Events' });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+}
