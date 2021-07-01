@@ -1,6 +1,5 @@
 //requiring modules
 const Blogs = require("../models/Blogs");
-const Events = require("../models/Events");
 
 //Creating blogs
 module.exports.create = (req, res) => {
